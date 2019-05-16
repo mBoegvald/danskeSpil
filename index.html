@@ -46,21 +46,125 @@
         --lightBlue: #093d8c;
       }
 
-      h1 {
-        font-family: "Shentox";
+      * {
+        margin: 0;
+        padding: 0;
       }
+
+      /* First section START */
+      #first {
+        background-image: url(pics/hero.jpg);
+        width: 100%;
+      }
+
+      #first .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      .left {
+        justify-content: center;
+        grid-column: span 3;
+        align-self: center;
+      }
+
+      .content {
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      .left h1 {
+        color: var(--lightOrange);
+        font-size: 2em;
+        font-family: "Shentox";
+        margin-bottom: 15px;
+      }
+
+      .left h2 {
+        color: white;
+        font-size: 2.9em;
+        font-family: "Shentox";
+        font-style: italic;
+      }
+
+      .left button {
+        background-color: var(--orange);
+        font-family: "Shentox";
+        font-style: italic;
+        padding-top: 10px;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        font-size: 2.9em;
+        width: 250px;
+        height: 75px;
+        vertical-align: middle;
+        outline: 0;
+        margin-top: 50px;
+      }
+
+      .right {
+        grid-column: span 2;
+        position: relative;
+        align-self: center;
+      }
+
+      .right img,
+      .right svg {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 40%;
+      }
+      .right img {
+        z-index: 10;
+        width: 70%;
+      }
+
+      /* First section END */
     </style>
   </head>
   <body>
     <section id="first">
       <div class="wrapper">
-        <div class="left"></div>
-        <div class="right"></div>
+        <div class="left">
+          <div class="content">
+            <h1>Konkurrence:</h1>
+            <h2>
+              Test din reaktionstid, og vind en tur til CS:GO major i berlin
+            </h2>
+            <button>GO!</button>
+          </div>
+        </div>
+        <div class="right">
+          <img src="pics/team.png" alt="Astralis holder" />
+          <svg
+            id="logo"
+            xmlns="http://www.w3.org/2000/svg"
+            width="307.1"
+            height="372.81"
+            viewBox="0 0 307.1 372.81"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #e50000;
+                }
+              </style>
+            </defs>
+            <title>astralis_logo</title>
+            <path
+              id="path"
+              class="cls-1"
+              d="M250.21,225.92l16.47,49.18,52.54.06L276.87,306,293,356.18l-42.34-31L207.79,356.1l16.44-49.9-42.62-31,52.54.08,16-49.32ZM250.43,64c-23.25,70.28-45.78,140.81-68.81,211.16l-84.75.47c33.17,23.62,71.95,52.93,110.93,80.46l-26.24,80.72H182L404,275.53v-.39l-84.74,0C296.16,204.81,273.6,134.3,250.43,64"
+              transform="translate(-96.87 -64)"
+            />
+          </svg>
+        </div>
       </div>
     </section>
     <section id="second">
       <div class="wrapper">
-        <h1>Hej med dig</h1>
+        <h1></h1>
         <div class="slideshow"></div>
         <button></button>
       </div>
