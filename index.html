@@ -121,6 +121,29 @@
       }
 
       /* First section END */
+
+      /* Second section START */
+
+      #second {
+        width: 100%;
+        height: 100px;
+        position: relative;
+        z-index: 12;
+      }
+
+      #second::before {
+        background-color: var(--blue);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        position: absolute;
+        right: -200px;
+        left: -200px;
+        top: -30px;
+        content: "";
+        bottom: 0;
+      }
+
+      /* Second section END */
     </style>
   </head>
   <body>
@@ -164,7 +187,7 @@
     </section>
     <section id="second">
       <div class="wrapper">
-        <h1></h1>
+        <h1>FIND DE SPÆNDENDE KAMPE PÅ EODDSET</h1>
         <div class="slideshow"></div>
         <button></button>
       </div>
