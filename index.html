@@ -57,13 +57,14 @@
         background-image: url(pics/hero.jpg);
         width: 100%;
         position: relative;
-        min-height: 80vh;
+        min-height: 100vh;
         overflow: hidden;
       }
 
       #first .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height: 100vh;
       }
 
       .left {
@@ -78,10 +79,11 @@
       }
 
       .left h1 {
-        color: var(--lightOrange);
+        color: #e69a71;
         font-size: 2em;
         font-family: "Shentox";
         margin-bottom: 15px;
+        font-weight: normal;
       }
 
       .left h2 {
@@ -89,6 +91,8 @@
         font-size: 2.9em;
         font-family: "Shentox";
         font-style: italic;
+        font-weight: normal;
+        text-transform: uppercase;
       }
 
       .left button {
@@ -118,21 +122,23 @@
         position: absolute;
         transform: translate(-50%, -50%);
         left: 40%;
+        top: 50%;
       }
       .right img {
         z-index: 10;
         width: 70%;
+        left: 40.5%;
       }
 
       #first::after {
         background-color: var(--blue);
-        border-bottom-left-radius: 50% 150px;
-        border-bottom-right-radius: 50% 150px;
+        border-bottom-left-radius: 60% 150px;
+        border-bottom-right-radius: 60% 150px;
         position: absolute;
-        bottom: 0%;
+        bottom: -1%;
         content: "";
         width: 120%;
-        height: 20%;
+        height: 150px;
         transform: rotate(180deg);
         right: -10%;
       }
