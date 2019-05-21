@@ -55,32 +55,36 @@
       /* First section START */
       #first {
         background-image: url(pics/hero.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
         width: 100%;
         position: relative;
-        min-height: 100vh;
+        min-height: 90vh;
         overflow: hidden;
       }
 
       #first .wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        /* height: 100vh; */
       }
 
       .left {
         justify-content: center;
-        grid-column: span 3;
+        grid-column: span 4;
         align-self: center;
       }
 
       .content {
-        width: 60%;
+        width: 70%;
         margin: 0 auto;
+        margin-bottom: 100px;
       }
 
       .left h1 {
         color: #e69a71;
-        font-size: 2em;
+        font-size: 2.5em;
         font-family: "Shentox";
         margin-bottom: 15px;
         font-weight: normal;
@@ -88,7 +92,7 @@
 
       .left h2 {
         color: white;
-        font-size: 2.9em;
+        font-size: 4em;
         font-family: "Shentox";
         font-style: italic;
         font-weight: normal;
@@ -122,25 +126,16 @@
         position: absolute;
         transform: translate(-50%, -50%);
         left: 40%;
-        top: 50%;
+        width: 100%;
       }
       .right img {
         z-index: 10;
-        width: 70%;
-        left: 40.5%;
-      }
 
-      #first::after {
-        background-color: var(--blue);
-        border-bottom-left-radius: 60% 150px;
-        border-bottom-right-radius: 60% 150px;
-        position: absolute;
-        bottom: -1%;
-        content: "";
-        width: 120%;
-        height: 150px;
-        transform: rotate(180deg);
-        right: -10%;
+        left: 40.5%;
+        top: 50%;
+      }
+      .right svg {
+        top: 20%;
       }
 
       /* First section END */
@@ -157,7 +152,9 @@
           <div class="content">
             <h1>Konkurrence:</h1>
             <h2>
-              Test din reaktionstid, og vind en tur til CS:GO major i berlin
+              Test din reaktionstid, <br />
+              og vind en tur til CS:GO <br />
+              major i berlin
             </h2>
             <button>GO!</button>
           </div>
@@ -167,8 +164,6 @@
           <svg
             id="logo"
             xmlns="http://www.w3.org/2000/svg"
-            width="307.1"
-            height="372.81"
             viewBox="0 0 307.1 372.81"
           >
             <defs>
