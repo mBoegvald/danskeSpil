@@ -53,7 +53,60 @@
       }
 
       /* First section START */
+
       #first {
+        background: url(pics/hero.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 90vh;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .left {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .left h1 {
+        color: #e69a71;
+        font-size: 0.8em;
+        font-family: "Shentox";
+        margin-bottom: 15px;
+        font-weight: normal;
+      }
+      .left h2 {
+        color: white;
+        font-size: 1.3em;
+        font-family: "Shentox";
+        font-style: italic;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      .right {
+        width: 70%;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .right img,
+      .right svg {
+        width: 100%;
+      }
+      .right img {
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+      }
+
+      /* #first {
         background-image: url(pics/hero.jpg);
         background-size: contain;
         background-repeat: no-repeat;
@@ -67,7 +120,7 @@
       #first .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        /* height: 100vh; */
+
       }
 
       .left {
@@ -99,7 +152,7 @@
         text-transform: uppercase;
       }
 
-      .left button {
+      .buttonContainer button {
         background-color: var(--orange);
         font-family: "Shentox";
         font-style: italic;
@@ -136,7 +189,7 @@
       }
       .right svg {
         top: 20%;
-      }
+      } */
 
       /* First section END */
 
@@ -152,11 +205,8 @@
           <div class="content">
             <h1>Konkurrence:</h1>
             <h2>
-              Test din reaktionstid, <br />
-              og vind en tur til CS:GO <br />
-              major i berlin
+              Test din reaktionstid, og vind en tur til CS:GO major i berlin
             </h2>
-            <button>GO!</button>
           </div>
         </div>
         <div class="right">
@@ -181,6 +231,9 @@
               transform="translate(-96.87 -64)"
             />
           </svg>
+        </div>
+        <div class="buttonContainer">
+          <button>GO!</button>
         </div>
       </div>
     </section>
