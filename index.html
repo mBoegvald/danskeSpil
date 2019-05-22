@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>eOddset</title>
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.min.css" />
     <link rel="stylesheet" href="main.css" />
+
+    <style>
+      .swiper-container {
+        width: 600px;
+        height: 300px;
+      }
+
+      .swiper-slide {
+        height: 60%;
+        margin: auto;
+      }
+
+      .active-slide {
+        background-color: green;
+        transform: scale(1.4);
+        transform-origin: center;
+      }
+    </style>
   </head>
   <body>
     <section id="hero">
@@ -52,9 +71,38 @@
     <section id="second">
       <div class="wrapper">
         <h1>FIND DE SPÆNDENDE KAMPE PÅ EODDSET</h1>
-        <div class="slideshow"></div>
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+          </div>
+          <!-- If we need pagination -->
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
         <button>Gå TIL LIVE BETTING</button>
       </div>
     </section>
+    <script src="node_modules/swiper/dist/js/swiper.min.js"></script>
+    <script>
+      let swiper = new Swiper(".swiper-container", {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        slidesPerGroup: 1,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        slideNextClass: "active-slide"
+      });
+    </script>
   </body>
 </html>
