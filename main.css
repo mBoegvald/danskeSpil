@@ -72,6 +72,7 @@
   grid-column: 1 / 3;
   grid-row: 6 / 13;
   align-self: center;
+  margin-top: calc(6px + 1vw);
 }
 
 .content {
@@ -106,7 +107,7 @@
   border: none;
   font-size: calc(8px + 3vw);
   width: 100%;
-  height: 60px;
+  height: 65px;
   vertical-align: middle;
   outline: 0;
 }
@@ -143,7 +144,10 @@
   z-index: 2;
 }
 
-#circle {
+#half {
+  position: absolute;
+  bottom: 0;
+  fill: var(--blue);
 }
 
 /* #second::before {
@@ -161,9 +165,9 @@
 
 /* Second section END */
 
-/* @media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
   .right {
-    grid-column: 1 / 13;
+    grid-column: 4 / 10;
     grid-row: auto;
     align-self: center;
     text-align: center;
@@ -171,8 +175,14 @@
   }
 
   .left {
-    grid-column: 1 / 13;
+    grid-column: 2 / 12;
     grid-row: auto;
     align-self: center;
   }
-} */
+
+  .buttonContainer {
+    grid-column: 4 / 10;
+    grid-row: auto;
+    margin-top: calc(6px + 1vw);
+  }
+}
