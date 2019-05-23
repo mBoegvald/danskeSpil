@@ -3,7 +3,7 @@
 window.addEventListener("DOMContentLoaded", init);
 const game = document.querySelector("#game");
 const stage = document.querySelector("#stage");
-const crosshair = document.querySelector("#crosshair");
+const crosshair = document.querySelector("#crosshair_rect");
 const box = document.querySelector("#box");
 
 function init() {
@@ -71,8 +71,22 @@ function checkShot() {
     element_1.x < element_2.x + element_2.width &&
     element_1.y < element_2.y + element_2.height
   ) {
+
+    // START TARGET ANIMATION DOWN
+
+    // newTarget();
     alert("You hit the box!");
   }
+}
+
+function newTarget() {
+
+  let randomTarget = Math.random()*10;
+
+  // EXAMPLE 10 TARGETS. 
+if(Math.random()*10 >0 && Math.random()1)
+
+  // WHEN TARGET HIT,
 }
 
 document.onkeydown = function(evt) {
