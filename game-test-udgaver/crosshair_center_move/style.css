@@ -76,6 +76,16 @@ body {
   pointer-events: none;
 }
 
+#crosshair_rect {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: green;
+  width: 1px;
+  height: 1px;
+  left: 50%;
+  top: 50%;
+}
+
 #crosshair {
   align-self: center;
   max-height: 2.5rem;
