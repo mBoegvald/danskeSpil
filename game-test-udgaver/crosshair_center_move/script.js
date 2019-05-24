@@ -71,7 +71,6 @@ function checkShot() {
     element_1.x < element_2.x + element_2.width &&
     element_1.y < element_2.y + element_2.height
   ) {
-
     // START TARGET ANIMATION DOWN
 
     // newTarget();
@@ -80,11 +79,10 @@ function checkShot() {
 }
 
 function newTarget() {
+  let randomTarget = Math.random() * 10;
 
-  let randomTarget = Math.random()*10;
-
-  // EXAMPLE 10 TARGETS. 
-if(Math.random()*10 >0 && Math.random()1)
+  // EXAMPLE 10 TARGETS.
+  // if(Math.random()*10 >0 && Math.random() <1)
 
   // WHEN TARGET HIT,
 }
