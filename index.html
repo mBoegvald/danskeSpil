@@ -7,30 +7,24 @@
     <title>eOddset</title>
     <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.min.css" />
     <link rel="stylesheet" href="main.css" />
-
-    <style>
-      .swiper-container {
-        width: 600px;
-        height: 300px;
-      }
-
-      .swiper-slide {
-        height: 60%;
-        margin: auto;
-      }
-
-      .active-slide {
-        background-color: green;
-        transform: scale(1.4);
-        transform-origin: center;
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section id="hero">
-      <!-- <svg id="circle" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="50" />
-      </svg> -->
+      <svg
+        id="half"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 225.05 9.91"
+      >
+        <path
+          d="M225.05,12.51c-32-6.26-70.76-9.91-112.53-9.91S32,6.28,0,12.51Z"
+          transform="translate(0 -2.6)"
+        />
+      </svg>
+
       <div class="wrapper">
         <div class="left">
           <div class="content">
@@ -72,19 +66,62 @@
       <div class="wrapper">
         <h1>FIND DE SPÆNDENDE KAMPE PÅ EODDSET</h1>
         <div class="swiper-container">
+          <div class="gradient gr_left"></div>
+          <div class="gradient gr_right"></div>
+
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">
+              <div class="slide_title">
+                <h2>Spil på CS:GO!</h2>
+              </div>
+              <div class="slide_thumnail">
+                <img src="pics/slide_1.jpg" alt="CS:GO" />
+              </div>
+              <div class="slide_content">
+                <img src="pics/ods.jpg" alt="Danske spil" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide_title">
+                <h2>Spil på CS:GO!</h2>
+              </div>
+              <div class="slide_thumnail">
+                <img src="pics/slide_1.jpg" alt="CS:GO" />
+              </div>
+              <div class="slide_content">
+                <img src="pics/ods.jpg" alt="Danske spil" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide_title">
+                <h2>Spil på CS:GO!</h2>
+              </div>
+              <div class="slide_thumnail">
+                <img src="pics/slide_1.jpg" alt="CS:GO" />
+              </div>
+              <div class="slide_content">
+                <img src="pics/ods.jpg" alt="Danske spil" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide_title">
+                <h2>Spil på CS:GO!</h2>
+              </div>
+              <div class="slide_thumnail">
+                <img src="pics/slide_1.jpg" alt="CS:GO" />
+              </div>
+              <div class="slide_content">
+                <img src="pics/ods.jpg" alt="Danske spil" />
+              </div>
+            </div>
           </div>
           <!-- If we need pagination -->
 
           <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev swiper-button-white"></div>
+          <div class="swiper-button-next swiper-button-white"></div>
         </div>
         <button>Gå TIL LIVE BETTING</button>
       </div>
