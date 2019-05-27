@@ -27,50 +27,34 @@ body {
 
 #stage {
   position: relative;
-  right: 0;
-  bottom: 0;
+  left: -50vw;
+  top: -50vh;
   width: 200vw;
   height: 200vh;
-  background-color: red;
+}
+
+.gamelayer {
+  position: absolute;
+  width: 200vw;
+  height: 200vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
 }
 
 #foreground {
-  position: absolute;
-  left: -50vw;
-  top: -50vh;
-  width: 200vw;
-  height: 200vh;
   z-index: 500;
-  background-image: url(forgrund.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
+  background-image: url(foreground.png);
 }
 
 #middleground {
-  position: absolute;
-  left: -50vw;
-  top: -50vh;
-  width: 200vw;
-  height: 200vh;
   z-index: 400;
-  background-image: url(mellemgrund.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
+  background-image: url(middleground.png);
 }
 
 #background {
-  position: absolute;
-  left: -50vw;
-  top: -50vh;
-  width: 200vw;
-  height: 200vh;
   z-index: 300;
-  background-image: url(baggrund.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
+  background-image: url(background.jpg);
 }
 
 #crosshair_wrapper {
@@ -89,7 +73,6 @@ body {
 #crosshair_rect {
   position: absolute;
   transform: translate(-50%, -50%);
-  background-color: green;
   width: 1px;
   height: 1px;
   left: 50%;
