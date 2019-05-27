@@ -3,14 +3,12 @@
 window.addEventListener("DOMContentLoaded", init);
 const game = document.querySelector("#game");
 const stage = document.querySelector("#stage");
-const middleground = document.querySelector("#middleground");
-const background = document.querySelector("#background");
 const crosshair = document.querySelector("#crosshair_rect");
-const box = document.querySelector("#box");
 
 function init() {
   console.log("init");
-  // document.querySelector("body").addEventListener("click", checkShot);
+  // disable leftclick?
+
   clientInput();
 }
 
@@ -46,43 +44,16 @@ function setMouseCenter(x, y) {
   const mouseYratio = (y / gameHeight) * 2 - 1;
   console.log(mouseXratio);
   console.log(mouseYratio);
-
   moveStage(mouseXratio, mouseYratio);
 }
 
 function moveStage(mouseXratio, mouseYratio) {
   // move #stage based on mouse position
   console.log("moveStage");
-  const moveX = mouseXratio * 50;
-  const moveY = mouseYratio * 50;
-  stage.style.right = moveX + "vw";
-  stage.style.bottom = moveY + "vh";
-  const moveBackX = -mouseXratio * 3;
-  const moveBackY = -mouseYratio * 3;
-  middleground.style.transform = `translate(${moveBackX}vw,${moveBackY}vh)`;
-  background.style.transform = `translate(${moveBackX}vw,${moveBackY}vh)`;
+  const moveX = -mouseXratio * 50;
+  const moveY = -mouseYratio * 50;
+  stage.style.transform = `translate(${moveX}vw,${moveY}vh)`;
 }
-
-// function checkShot() {
-//   console.log("checkShot");
-
-//   // get positions of elements with boundingClientRect
-//   const element_1 = crosshair.getBoundingClientRect();
-//   const element_2 = box.getBoundingClientRect();
-
-//   // check for overlap of boxes
-//   if (
-//     element_1.x > element_2.x &&
-//     element_1.y > element_2.y &&
-//     element_1.x < element_2.x + element_2.width &&
-//     element_1.y < element_2.y + element_2.height
-//   ) {
-//     // START TARGET ANIMATION DOWN
-
-//     // newTarget();
-//     alert("You hit the box!");
-//   }
-// }
 
 document.onkeydown = function(evt) {
   evt = evt || window.event;
