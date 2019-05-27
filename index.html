@@ -7,12 +7,88 @@
     <title>eOddset</title>
     <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.min.css" />
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="footer.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <header class="top-navigation">
+      <nav class="brand-nav">
+        <div class="corporate-nav">
+          <div class="corporate-container">
+            <div class="corporate-logo">
+              <img src="pics/danskespillogo.png" alt="Danske spils logo" />
+            </div>
+
+            <div class="corporate-left-side">
+              <ul>
+                <li>FLERE SPIL</li>
+                <li>Hjælp</li>
+                <li>Om Os</li>
+              </ul>
+            </div>
+
+            <div class="corporate-right-side">
+              <ul>
+                <li>Log ind</li>
+                <li>Opret konto</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-nav-desktop-container">
+          <div class="brand-nav-dekstop-wrapper">
+            <div class="brand-nav-desktop-logo">
+              <img src="pics/oddset.png" />
+              <span class="bran-nav-logo-text"
+                >Udbydes af Danske Licens Spil A/S</span
+              >
+            </div>
+            <ul>
+              <li>Spil Oddset</li>
+              <li>LIVE</li>
+              <li>Måljagt</li>
+              <li>Oddset Inside</li>
+              <li>Managerspil</li>
+              <li>Kampagner</li>
+              <li>Statistik</li>
+              <li>Alt om Oddset</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="brand-nav-mobile-container">
+          <div class="menu-toggle">
+            <a class="menu-toggle-btn">
+              <div></div>
+              <div></div>
+              <div></div>
+            </a>
+          </div>
+          <div class="brand-nav-logo">
+            <a class="brand-nav-logo-link">
+              <img
+                class="brand-nav-logo-cube"
+                src="pics/terning.png"
+                alt="Danske spils terning"
+              />
+              <img
+                class="brand-nav-logo-oddset"
+                src="pics/oddset.png"
+                alt="Danske spil Oddset"
+              />
+            </a>
+          </div>
+          <div class="user-bar">
+            <a class="user-bar-login-btn">Log ind</a>
+          </div>
+        </div>
+      </nav>
+    </header>
     <section id="hero">
       <svg
         id="half"
@@ -129,6 +205,41 @@
         <button>GÅ TIL LIVE BETTING</button>
       </div>
     </section>
+
+    <footer>
+      <div class="info-bar">
+        <div class="footer-container">
+          <nav class="footer-navigation-box">
+            <ul class="footer-navigation-list">
+              <li>Driftsstatus</li>
+              <li>YouBet</li>
+              <li>Vilkår</li>
+              <li>Vinderchance</li>
+              <li>Vegas</li>
+              <li>Cookies</li>
+              <li>Bliv forhandler</li>
+              <li>Cookies</li>
+              <li>Ansvarlighed</li>
+              <li>kalaallisut</li>
+              <li>privatlivspolitik</li>
+            </ul>
+          </nav>
+          <address class="address-box">
+            <div class="address-box-logo">
+              <img src="pics/danskespillogo.png" />
+            </div>
+            <p>Danske Spil A/S</p>
+            <p>Korsdalsvej 135</p>
+            <p>2605 Brøndby</p>
+          </address>
+          <div class="contact-box">
+            <p>Kontakt vores kundeservice alle dage fra 9-23</p>
+            <a>Kontakt kundeservice</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="node_modules/swiper/dist/js/swiper.min.js"></script>
     <script>
       let swiper = new Swiper(".swiper-container", {
@@ -145,6 +256,12 @@
         slideDuplicatePrevClass: "nth-slide",
         slidePrevClass: "nth-slide"
       });
+
+      document
+        .querySelector(".menu-toggle-btn")
+        .addEventListener("click", () => {
+          document.querySelector(".menu-toggle-btn").classList.toggle("active");
+        });
     </script>
   </body>
 </html>

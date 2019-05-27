@@ -1,0 +1,152 @@
+footer {
+  color: #fff;
+  border-top: 1px solid #fff;
+}
+
+.info-bar {
+  background: #043c9b;
+  width: 100%;
+  padding: 5vw 0;
+}
+
+.footer-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-navigation-box,
+.address-box,
+.contact-box {
+  width: 100%;
+  text-align: center;
+  margin: 3vw 0;
+}
+
+.footer-navigation-box::after {
+  content: "";
+  height: 1px;
+  width: 85%;
+  display: block;
+  margin: 7vw auto 2vw;
+  background-color: white;
+}
+
+.footer-navigation-list {
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-navigation-list li {
+  width: 49%;
+  list-style: none;
+  padding: 3.75px 0 3.75px;
+  margin: 0;
+  display: inline-block;
+}
+
+.address-box-logo {
+  margin-bottom: 0.5vw;
+}
+
+.address-box-logo img {
+  max-width: 40vw;
+}
+
+.address-box p {
+  margin: 0;
+  font-size: 3.8vw;
+  display: inline-block;
+  font-style: normal;
+}
+
+.address-box p:first-of-type {
+  display: block;
+}
+
+.contact-box a {
+  margin: 4vw 2vw;
+  background-color: #fff;
+  padding: 4vw 5vw 4.4vw;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 1vw;
+  display: inline-block;
+  font-size: 4vw;
+}
+
+footer [class$="box"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 960px) {
+  .footer-navigation-box {
+    float: none;
+    width: 50%;
+    text-align: left;
+    margin: 0;
+  }
+
+  .footer-container {
+    text-align: left;
+    padding: 0 50px;
+  }
+
+  .info-bar {
+    padding: 80px 0;
+  }
+
+  .address-box,
+  .contact-box,
+  .navigation-box {
+    margin: 0;
+    text-align: left;
+  }
+
+  .footer-navigation-list li {
+    text-align: left;
+  }
+
+  .address-box {
+    float: left;
+  }
+
+  .address-box p {
+    margin: 4px 0;
+    font-size: 14px;
+    display: block;
+  }
+
+  .address-box-logo img {
+    max-width: 160px;
+    width: 100%;
+  }
+
+  .address-box,
+  .contact-box {
+    width: 24%;
+  }
+
+  .contact-box p {
+    display: block;
+    font-size: 14px;
+    max-width: 200px;
+    margin: 0;
+  }
+
+  .contact-box a {
+    padding: 16px 20px 18px;
+    border-radius: 4px;
+    margin: 16px 0 0;
+    font-size: 14px;
+  }
+
+  .footer-navigation-box::after {
+    content: none;
+  }
+}
