@@ -156,6 +156,24 @@ body {
   overflow-x: hidden;
 }
 
+#second h1 {
+  font-size: 2em;
+  color: white;
+  text-align: center;
+}
+#second .button-container {
+  text-align: center;
+  margin: 100px 0 100px;
+}
+#second button {
+  font-size: 1.5em;
+  background-color: var(--lightBlue);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px 5px;
+}
+
 /* #second::before {
   content: "";
   background-color: var(--blue);
