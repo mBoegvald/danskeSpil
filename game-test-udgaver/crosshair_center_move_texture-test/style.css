@@ -1,0 +1,108 @@
+img,
+svg {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hideoverflow {
+  overflow: hidden;
+}
+
+#game {
+  width: 100vw;
+  height: 100vh;
+  cursor: none;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: rgb(0, 0, 0);
+}
+
+#stage {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  width: 200vw;
+  height: 200vh;
+  background-color: red;
+}
+
+#foreground {
+  position: absolute;
+  left: -50vw;
+  top: -50vh;
+  width: 200vw;
+  height: 200vh;
+  z-index: 500;
+  background-image: url(forgrund.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+#middleground {
+  position: absolute;
+  left: -50vw;
+  top: -50vh;
+  width: 200vw;
+  height: 200vh;
+  z-index: 400;
+  background-image: url(mellemgrund.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+#background {
+  position: absolute;
+  left: -50vw;
+  top: -50vh;
+  width: 200vw;
+  height: 200vh;
+  z-index: 300;
+  background-image: url(baggrund.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+#crosshair_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  pointer-events: none;
+}
+
+#crosshair_rect {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: green;
+  width: 1px;
+  height: 1px;
+  left: 50%;
+  top: 50%;
+}
+
+#crosshair {
+  align-self: center;
+  max-height: 4rem;
+  max-width: 4rem;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
