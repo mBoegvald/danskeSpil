@@ -64,7 +64,10 @@
     </section>
     <section id="second">
       <div class="wrapper">
-        <h1>FIND DE SPÆNDENDE KAMPE PÅ EODDSET</h1>
+        <h1>
+          FIND DE SPÆNDENDE<br />
+          KAMPE PÅ eODDSET
+        </h1>
         <div class="swiper-container">
           <div class="gradient gr_left"></div>
           <div class="gradient gr_right"></div>
@@ -123,14 +126,14 @@
           <div class="swiper-button-prev swiper-button-white"></div>
           <div class="swiper-button-next swiper-button-white"></div>
         </div>
-        <button>Gå TIL LIVE BETTING</button>
+        <button>GÅ TIL LIVE BETTING</button>
       </div>
     </section>
     <script src="node_modules/swiper/dist/js/swiper.min.js"></script>
     <script>
       let swiper = new Swiper(".swiper-container", {
         slidesPerView: 3,
-        spaceBetween: 10,
+        spaceBetween: -30,
         slidesPerGroup: 1,
         loop: true,
         loopFillGroupWithBlank: true,
@@ -138,7 +141,9 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
         },
-        slideNextClass: "active-slide"
+        slideNextClass: "active-slide",
+        slideDuplicatePrevClass: "nth-slide",
+        slidePrevClass: "nth-slide"
       });
     </script>
   </body>
