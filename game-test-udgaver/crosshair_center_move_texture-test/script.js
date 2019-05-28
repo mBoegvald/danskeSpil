@@ -4,11 +4,13 @@ window.addEventListener("DOMContentLoaded", init);
 const game = document.querySelector("#game");
 const stage = document.querySelector("#stage");
 const crosshair = document.querySelector("#crosshair_rect");
+let target;
 
 function init() {
   console.log("init");
   // disable leftclick?
-
+  document.querySelector("body").addEventListener("click", checkShot);
+  setTimeout(newTarget, 1000);
   clientInput();
 }
 
@@ -53,6 +55,37 @@ function moveStage(mouseXratio, mouseYratio) {
   const moveX = -mouseXratio * 50;
   const moveY = -mouseYratio * 50;
   stage.style.transform = `translate(${moveX}vw,${moveY}vh)`;
+}
+
+function newTarget() {
+  let targetNumber = Math.floor(Math.random() * 2);
+
+  console.log(targetNumber);
+
+  document.querySelector("#target-" + targetNumber).classList.add("active");
+  target = document.querySelector(".target.active");
+}
+
+function checkShot() {
+  console.log("checkShot");
+
+  // get positions of elements with boundingClientRect
+  const element_1 = crosshair.getBoundingClientRect();
+  let element_2 = target.getBoundingClientRect();
+
+  // check for overlap of boxes
+  if (
+    element_1.x > element_2.x &&
+    element_1.y > element_2.y &&
+    element_1.x < element_2.x + element_2.width &&
+    element_1.y < element_2.y + element_2.height
+  ) {
+    // START TARGET ANIMATION DOWN
+    target.classList.remove("active");
+    newTarget();
+  } else {
+    console.log("You missed");
+  }
 }
 
 document.onkeydown = function(evt) {

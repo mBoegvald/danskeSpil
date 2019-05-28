@@ -82,9 +82,10 @@ function newTarget() {
   let randomTarget = Math.random() * 10;
 
   // EXAMPLE 10 TARGETS.
-  // if(Math.random()*10 >0 && Math.random() <1)
-
-  // WHEN TARGET HIT,
+  if (randomTarget > 0 && randomTarget < 1) {
+    console.log("target1");
+    // START FLIP UP ANIMATION
+  }
 }
 
 document.onkeydown = function(evt) {

@@ -6,16 +6,16 @@
       }
       .spinner {
         width: 200px;
-        margin: 100px auto;
-        animation: rotate-div 0.2s forwards ease-in;
-        transform-origin: left center;
+
+        animation: rotate-div 0.3s forwards ease-in;
+        transform-origin: bottom;
       }
       @keyframes rotate-div {
         0% {
-          transform: perspective(1000px) rotateY(90deg) rotateX(0deg);
+          transform: perspective(1000px) rotateX(90deg) rotateY(0deg);
         }
         100% {
-          transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+          transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
         }
       }
     </style>

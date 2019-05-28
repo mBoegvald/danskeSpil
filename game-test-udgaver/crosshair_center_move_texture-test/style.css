@@ -89,3 +89,35 @@ body {
   opacity: 0;
   pointer-events: none;
 }
+.target {
+  position: absolute;
+  width: 150px;
+  height: 325px;
+  background-image: url(target.png);
+  z-index: 450;
+  transform: perspective(1000px) rotateX(90deg) rotateY(0deg);
+  transform-origin: bottom;
+  transition: 0.3s forwards ease-in;
+}
+#target-0 {
+  left: 31.3%;
+  top: 43%;
+}
+#target-1 {
+  transform: perspective(1000px) rotateX(90deg) rotateY(0deg) scale(0.5);
+  z-index: 350;
+  left: 28%;
+  top: 31%;
+}
+
+.target.active {
+  animation: from-bottom 0.3s forwards ease-in;
+}
+@keyframes from-bottom {
+  0% {
+    transform: perspective(1000px) rotateX(90deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
