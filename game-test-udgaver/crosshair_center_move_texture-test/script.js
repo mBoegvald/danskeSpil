@@ -43,9 +43,9 @@ function setMouseCenter(x, y) {
 
 function moveStage(mouseXratio, mouseYratio) {
   // move #stage based on mouse position
-  const moveX = -mouseXratio * 50;
-  const moveY = -mouseYratio * 50;
-  stage.style.transform = `translate(${moveX}vw,${moveY}vh)`;
+  const moveX = -mouseXratio * 25;
+  const moveY = -mouseYratio * 25;
+  stage.style.transform = `translate(${moveX}%,${moveY}%)`;
 }
 
 function newTarget() {
