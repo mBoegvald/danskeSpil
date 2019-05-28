@@ -97,14 +97,13 @@ body {
   z-index: 450;
   transform: perspective(1000px) rotateX(90deg) rotateY(0deg);
   transform-origin: bottom;
-  transition: 0.3s forwards ease-in;
+  transition: 0.3s ease-in;
 }
 #target-0 {
   left: 31.3%;
   top: 43%;
 }
 #target-1 {
-  transform: perspective(1000px) rotateX(90deg) rotateY(0deg) scale(0.5);
   z-index: 350;
   left: 28%;
   top: 31%;
