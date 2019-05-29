@@ -63,7 +63,8 @@ button:hover {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 100vh;
+  max-height: 100vh;
+  height: 100vh;
 }
 
 #hero .wrapper {
@@ -72,8 +73,9 @@ button:hover {
   grid-template-rows: repeat(12, 1fr);
   grid-column-gap: 10px;
   margin: auto;
+  padding: 90px 0 0 0;
   max-width: 80%;
-  height: 90vh;
+  height: 85vh;
   grid-auto-flow: row;
 }
 
@@ -434,5 +436,9 @@ button:hover {
     grid-column: 4 / 10;
     grid-row: auto;
     margin-top: calc(6px + 1vw);
+  }
+
+  .active-slide {
+    transform: scale(1.8);
   }
 }
