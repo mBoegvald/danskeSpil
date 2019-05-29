@@ -95,6 +95,7 @@ footer [class$="box"] {
   .footer-container {
     text-align: left;
     padding: 0 50px;
+    box-sizing: border-box;
   }
 
   .info-bar {
