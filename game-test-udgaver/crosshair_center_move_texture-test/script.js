@@ -6,11 +6,14 @@ const stage = document.querySelector("#stage");
 const crosshair = document.querySelector("#crosshair_rect");
 let target;
 let latestTarget = null;
+let pointCounter = 0;
+let seconds = document.getElementById("countdown").textContent;
 
 function init() {
   // disable leftclick?
   document.querySelector("body").addEventListener("click", checkShot);
   setTimeout(newTarget, 1000);
+  setTimeout(countdown, 1000);
   clientInput();
 }
 
@@ -79,10 +82,26 @@ function checkShot() {
   ) {
     // START TARGET ANIMATION DOWN
     target.classList.remove("active");
+    target.classList.add("hide");
+    target.addEventListener("animationend", () => {
+      target.classList.remove("hide");
+    });
+    pointCounter++;
+    document.querySelector(
+      "#pointSystem"
+    ).textContent = `Mål ramt: ${pointCounter}`;
     newTarget();
   } else {
     console.log("You missed");
   }
+}
+
+function countdown() {
+  let countdown = setInterval(function() {
+    seconds--;
+    document.getElementById("countdown").textContent = seconds;
+    if (seconds <= 0) clearInterval(countdown);
+  }, 1000);
 }
 
 document.onkeydown = function(evt) {

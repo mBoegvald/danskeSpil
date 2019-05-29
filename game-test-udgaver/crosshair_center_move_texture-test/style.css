@@ -94,6 +94,22 @@ body {
   pointer-events: none;
 }
 
+#pointSystem {
+  position: fixed;
+  top: 5%;
+  left: 2%;
+  z-index: 10000000;
+  font-size: 2em;
+}
+#countdown {
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  z-index: 10000000;
+  font-size: 3em;
+}
+
 .target {
   position: absolute;
   background-image: url(target.png);
@@ -128,5 +144,16 @@ body {
   }
   100% {
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+.target.hide {
+  animation: to-bottom 0.15s forwards ease-in;
+}
+@keyframes to-bottom {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(90deg) rotateY(0deg);
   }
 }
