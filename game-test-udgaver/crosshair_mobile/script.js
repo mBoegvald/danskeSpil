@@ -14,27 +14,25 @@ function init() {
   setTimeout(newTarget, 1000);
   setTimeout(countdown, 1000);
   // check for mouse
-  document.addEventListener("mousemove", mouseInput, false);
+  game.addEventListener("mousemove", mouseInput, false);
   // check for touch device
-  document.addEventListener("touchstart", touchInput);
+  game.addEventListener("touchstart", touchInput);
+  game.addEventListener("touchstart", touchShot, false);
 }
 
 function mouseInput() {
   // mouse is moved - set mouse event listners
-  document.removeEventListener("mousemove", mouseInput, false);
   game.addEventListener("mousemove", mouseMove, false);
   game.addEventListener("click", checkShot);
 }
 
 function touchInput() {
-  // the user is touching the screen for interaction  - set touch event listners
-  document.removeEventListener("mousemove", mouseInput, false);
-  document.removeEventListener("touchstart", touchInput);
-  game.addEventListener("touchstart", touchShot, false);
+  // the user is touching the screen for interaction - remove scene-displacement
+  game.removeEventListener("mousemove", mouseInput, false);
 
   // Free curser from center
   crosshair_touch.classList.add("crosshair_absolute");
-  checkTouchShot();
+  touchShot();
 }
 
 function touchShot(event) {
@@ -42,9 +40,10 @@ function touchShot(event) {
   let x = event.touches[0].clientX;
   let y = event.touches[0].clientY;
   checkTouchShot(x, y);
+
   // set center of crosshair
-  x -= game.offsetLeft + 32;
-  y -= game.offsetTop + 32;
+  x -= game.offsetLeft + 16;
+  y -= game.offsetTop + 16;
   // move crosshair to touched spot
   crosshair_touch.style.left = 0 + "px";
   crosshair_touch.style.top = 0 + "px";

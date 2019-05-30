@@ -4,6 +4,10 @@ svg {
   height: auto;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   min-height: 100%;
   margin: 0;
@@ -85,8 +89,8 @@ body {
 
 #crosshair {
   align-self: center;
-  max-height: 4rem;
-  max-width: 4rem;
+  max-height: 2rem;
+  max-width: 2rem;
 }
 
 .hidden {
@@ -164,4 +168,12 @@ body {
   position: absolute;
   z-index: 999;
   pointer-events: none;
+}
+
+@media only screen and (min-width: 992px) {
+  #crosshair {
+    align-self: center;
+    max-height: 4rem;
+    max-width: 4rem;
+  }
 }
