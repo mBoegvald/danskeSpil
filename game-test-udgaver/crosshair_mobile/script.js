@@ -33,6 +33,9 @@ function touchInput() {
   // Free curser from center
   crosshair_touch.classList.add("crosshair_absolute");
   touchShot();
+
+  //hide gun
+  document.querySelector("#gun").classList.add("hidden");
 }
 
 function touchShot(event) {

@@ -93,6 +93,14 @@ body {
   max-width: 2rem;
 }
 
+#gun {
+  width: 19vw;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 15vw;
+}
+
 .hidden {
   opacity: 0;
   pointer-events: none;
