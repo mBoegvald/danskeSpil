@@ -52,7 +52,7 @@ function moveStage(mouseXratio, mouseYratio) {
 }
 
 function newTarget() {
-  let targetNumber = Math.floor(Math.random() * 2);
+  let targetNumber = Math.floor(Math.random() * 5);
 
   if (latestTarget === targetNumber) {
     newTarget();
@@ -81,6 +81,7 @@ function checkShot() {
     element_1.y < element_2.y + element_2.height
   ) {
     // START TARGET ANIMATION DOWN
+
     target.classList.remove("active");
     target.classList.add("hide");
     target.addEventListener("animationend", () => {

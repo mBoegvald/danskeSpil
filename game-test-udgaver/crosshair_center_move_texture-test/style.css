@@ -120,10 +120,17 @@ body {
 }
 
 #target-0 {
-  width: 10vw;
-  height: 21.67vw;
-  left: 38%;
-  top: 39%;
+  width: 8vw;
+  height: 17.27vw;
+  left: 31%;
+  top: 43%;
+  z-index: 450;
+}
+#target-2 {
+  width: 8vw;
+  height: 17.27vw;
+  left: 58%;
+  top: 43%;
   z-index: 450;
 }
 
@@ -131,8 +138,24 @@ body {
   width: 4vw;
   height: 8.67vw;
   left: 28.75%;
-  top: 39%;
+  top: 39.5%;
   z-index: 350;
+}
+#target-3 {
+  width: 4vw;
+  height: 8.67vw;
+  left: 35.5%;
+  top: 40.5%;
+  z-index: 350;
+}
+#target-4 {
+  width: 3vw;
+  height: 6.47vw;
+  left: 60.7%;
+  top: 41%;
+  z-index: 350;
+  transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  transform-origin: center left;
 }
 
 .target.active {
@@ -155,5 +178,27 @@ body {
   }
   100% {
     transform: perspective(1000px) rotateX(90deg) rotateY(0deg);
+  }
+}
+.target.activeAlt {
+  animation: from-left 0.15s forwards ease-in;
+}
+@keyframes from-left {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+.target.hideAlt {
+  animation: to-left 0.15s forwards ease-in;
+}
+@keyframes to-left {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
   }
 }
