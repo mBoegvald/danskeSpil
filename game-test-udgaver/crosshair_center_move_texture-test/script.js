@@ -64,6 +64,10 @@ function newTarget() {
 
   target.classList.add("active");
   // target = document.querySelector(".target.active");
+
+  setTimeout(() => {
+    document.querySelector("#flip-out").play();
+  }, 300);
 }
 
 function checkShot() {
@@ -94,6 +98,7 @@ function checkShot() {
     newTarget();
   } else {
     console.log("You missed");
+    document.querySelector("#shot-miss").play();
   }
 }
 
