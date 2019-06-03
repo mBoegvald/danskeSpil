@@ -5,6 +5,7 @@ const game = document.querySelector("#game");
 const stage = document.querySelector("#stage");
 const crosshair = document.querySelector("#crosshair_rect");
 const crosshair_touch = document.querySelector("#crosshair");
+const gun = document.querySelector("#gun");
 let target;
 let latestTarget = null;
 let pointCounter = 0;
@@ -155,6 +156,12 @@ function checkShot() {
   // get positions of elements with boundingClientRect
   const element_1 = crosshair.getBoundingClientRect();
   let element_2 = target.getBoundingClientRect();
+
+  gun.classList.add("gun-animation");
+  gun.addEventListener("animationend", () => {
+    gun.classList.remove("gun-animation");
+    gun.removeEventListener("animationend");
+  });
 
   hitSound();
 
