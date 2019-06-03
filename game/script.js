@@ -5,6 +5,7 @@ const game = document.querySelector("#game");
 const stage = document.querySelector("#stage");
 const crosshair = document.querySelector("#crosshair_rect");
 const crosshair_touch = document.querySelector("#crosshair");
+const gun = document.querySelector("#gun");
 let target;
 let latestTarget = null;
 let pointCounter = 0;
@@ -59,6 +60,8 @@ function checkTouchShot(x, y) {
   let touchX = x;
   let touchY = y;
 
+  hitSound();
+
   // get positions of target with boundingClientRect
   let element_2 = target.getBoundingClientRect();
 
@@ -70,11 +73,23 @@ function checkTouchShot(x, y) {
     touchY < element_2.y + element_2.height
   ) {
     // START TARGET ANIMATION DOWN
-    target.classList.remove("active");
-    target.classList.add("hide");
-    target.addEventListener("animationend", () => {
-      target.classList.remove("hide");
-    });
+
+    if (target.id === "target-4") {
+      const localTarget = target;
+      localTarget.classList.remove("activeAlt");
+      localTarget.classList.add("hideAlt");
+      localTarget.addEventListener("animationend", removeHideAlt);
+
+      function removeHideAlt() {
+        localTarget.removeEventListener("animationend", removeHideAlt);
+        console.log("hideAlt");
+        console.log("from: ", localTarget);
+        localTarget.classList.remove("hideAlt");
+      }
+    } else {
+      target.classList.remove("active");
+      target.classList.add("hide");
+    }
     pointCounter++;
     document.querySelector(
       "#pointSystem"
@@ -142,6 +157,12 @@ function checkShot() {
   const element_1 = crosshair.getBoundingClientRect();
   let element_2 = target.getBoundingClientRect();
 
+  gun.classList.add("gun-animation");
+  gun.addEventListener("animationend", () => {
+    gun.classList.remove("gun-animation");
+    gun.removeEventListener("animationend");
+  });
+
   hitSound();
 
   // check for overlap of boxes
@@ -154,18 +175,26 @@ function checkShot() {
     // START TARGET ANIMATION DOWN
 
     if (target.id === "target-4") {
-      target.classList.remove("activeAlt");
-      target.classList.add("hideAlt");
+      const localTarget = target;
+      localTarget.classList.remove("activeAlt");
+      localTarget.classList.add("hideAlt");
+      localTarget.addEventListener("animationend", removeHideAlt);
+
+      function removeHideAlt() {
+        localTarget.removeEventListener("animationend", removeHideAlt);
+        localTarget.classList.remove("hideAlt");
+      }
     } else {
-      target.classList.remove("active");
-      target.classList.add("hide");
+      const localTarget = target;
+      localTarget.classList.remove("active");
+      localTarget.classList.add("hide");
+      localTarget.addEventListener("animationend", removeHide);
+
+      function removeHide() {
+        localTarget.removeEventListener("animationend", removeHide);
+        localTarget.classList.remove("hide");
+      }
     }
-    target.addEventListener("animationend", () => {
-      target.classList.remove("hideAlt");
-    });
-    target.addEventListener("animationend", () => {
-      target.classList.remove("hide");
-    });
     pointCounter++;
     document.querySelector(
       "#pointSystem"

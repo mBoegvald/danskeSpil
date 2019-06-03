@@ -194,6 +194,46 @@ body {
     transform: perspective(1000px) rotateX(90deg) rotateY(0deg);
   }
 }
+.target.activeAlt {
+  animation: from-left 0.15s forwards ease-in;
+  transform-origin: center left;
+}
+@keyframes from-left {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+.target.hideAlt {
+  animation: to-left 0.15s forwards ease-in;
+  transform-origin: center left;
+}
+@keyframes to-left {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  }
+}
+
+.gun-animation {
+  animation: shot-animation 0.35s ease-in-out;
+}
+
+@keyframes shot-animation {
+  0% {
+    transform: rotate(0deg) scale(1) skew(0deg, 0deg);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.2) skew(-5deg, 15deg);
+  }
+  100% {
+    transform: rotate(0deg) scale(1) skew(0deg, 0deg);
+  }
+}
 
 .crosshair_absolute {
   position: absolute;
