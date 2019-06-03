@@ -175,13 +175,18 @@ function checkShot() {
 
       function removeHideAlt() {
         localTarget.removeEventListener("animationend", removeHideAlt);
-        console.log("hideAlt");
-        console.log("from: ", localTarget);
         localTarget.classList.remove("hideAlt");
       }
     } else {
-      target.classList.remove("active");
-      target.classList.add("hide");
+      const localTarget = target;
+      localTarget.classList.remove("active");
+      localTarget.classList.add("hide");
+      localTarget.addEventListener("animationend", removeHide);
+
+      function removeHide() {
+        localTarget.removeEventListener("animationend", removeHide);
+        localTarget.classList.remove("hide");
+      }
     }
     pointCounter++;
     document.querySelector(
