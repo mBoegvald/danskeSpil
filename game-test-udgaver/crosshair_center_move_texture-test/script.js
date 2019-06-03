@@ -69,9 +69,7 @@ function newTarget() {
 
   // target = document.querySelector(".target.active");
 
-  // setTimeout(() => {
-  //   document.querySelector("#flip-out").play();
-  // }, 300);
+  setTimeout(flipSound, 100);
 }
 
 function checkShot() {
@@ -81,7 +79,7 @@ function checkShot() {
   const element_1 = crosshair.getBoundingClientRect();
   let element_2 = target.getBoundingClientRect();
 
-  hitSound();
+  /* hitSound(); */
 
   // check for overlap of boxes
   if (
@@ -121,6 +119,13 @@ function hitSound() {
   hitShot.src = "sounds/deagle-shot.mp3";
   hitShot.play();
   hitShot.volume = 0.1;
+}
+
+function flipSound() {
+  console.log("flipSound");
+  let flipBoard = document.createElement("audio");
+  flipBoard.src = "sounds/flip2.mp3";
+  flipBoard.play();
 }
 
 function countdown() {
