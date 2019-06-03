@@ -12,6 +12,17 @@
   overflow: hidden;
 }
 
+.module_logo {
+  width: 140px;
+  height: 70px;
+  background-image: url(../pics/logo.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+}
+
 .module_content {
   width: 200vw;
   height: 100vh;
