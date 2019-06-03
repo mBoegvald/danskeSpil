@@ -278,6 +278,17 @@
         .addEventListener("click", () => {
           document.querySelector(".menu-toggle-btn").classList.toggle("active");
         });
+
+      let elem = document.documentElement;
+      document
+        .querySelector(".buttonContainer button")
+        .addEventListener("click", () => {
+          console.log("fullscreen");
+          window.location.href = "game/index.html";
+          /*   if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } */
+        });
     </script>
   </body>
 </html>

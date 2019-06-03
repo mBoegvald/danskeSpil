@@ -211,3 +211,12 @@ document.onkeydown = function(evt) {
     alert("Escape");
   }
 };
+
+window.addEventListener("DOMContentLoaded", requestFullscreenOpen);
+function requestFullscreenOpen() {
+  let elem = document.documentElement;
+  console.log("requestFullscreen");
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  }
+}
