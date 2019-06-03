@@ -210,7 +210,7 @@ function hitSound() {
   let hitShot = document.createElement("audio");
   hitShot.src = "sounds/deagle-shot.mp3";
   hitShot.play();
-  hitShot.volume = 0.1;
+  hitShot.volume = 0.03;
 }
 
 function flipSound() {
