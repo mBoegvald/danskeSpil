@@ -182,6 +182,7 @@ body {
 }
 .target.activeAlt {
   animation: from-left 0.15s forwards ease-in;
+  transform-origin: center left;
 }
 @keyframes from-left {
   0% {
@@ -193,6 +194,7 @@ body {
 }
 .target.hideAlt {
   animation: to-left 0.15s forwards ease-in;
+  transform-origin: center left;
 }
 @keyframes to-left {
   0% {

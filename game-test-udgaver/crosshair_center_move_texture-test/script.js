@@ -61,13 +61,17 @@ function newTarget() {
   latestTarget = targetNumber;
 
   target = document.querySelector("#target-" + targetNumber);
+  if (target.id === "target-4") {
+    target.classList.add("activeAlt");
+  } else {
+    target.classList.add("active");
+  }
 
-  target.classList.add("active");
   // target = document.querySelector(".target.active");
 
-  setTimeout(() => {
-    document.querySelector("#flip-out").play();
-  }, 300);
+  // setTimeout(() => {
+  //   document.querySelector("#flip-out").play();
+  // }, 300);
 }
 
 function checkShot() {
@@ -76,6 +80,8 @@ function checkShot() {
   // get positions of elements with boundingClientRect
   const element_1 = crosshair.getBoundingClientRect();
   let element_2 = target.getBoundingClientRect();
+
+  hitSound();
 
   // check for overlap of boxes
   if (
@@ -86,8 +92,16 @@ function checkShot() {
   ) {
     // START TARGET ANIMATION DOWN
 
-    target.classList.remove("active");
-    target.classList.add("hide");
+    if (target.id === "target-4") {
+      target.classList.remove("activeAlt");
+      target.classList.add("hideAlt");
+    } else {
+      target.classList.remove("active");
+      target.classList.add("hide");
+    }
+    target.addEventListener("animationend", () => {
+      target.classList.remove("hideAlt");
+    });
     target.addEventListener("animationend", () => {
       target.classList.remove("hide");
     });
@@ -98,8 +112,15 @@ function checkShot() {
     newTarget();
   } else {
     console.log("You missed");
-    document.querySelector("#shot-miss").play();
   }
+}
+
+function hitSound() {
+  console.log("hitSound");
+  let hitShot = document.createElement("audio");
+  hitShot.src = "sounds/deagle-shot.mp3";
+  hitShot.play();
+  hitShot.volume = 0.1;
 }
 
 function countdown() {
