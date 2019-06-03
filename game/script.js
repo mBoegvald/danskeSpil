@@ -59,6 +59,8 @@ function checkTouchShot(x, y) {
   let touchX = x;
   let touchY = y;
 
+  hitSound();
+
   // get positions of target with boundingClientRect
   let element_2 = target.getBoundingClientRect();
 
@@ -70,11 +72,23 @@ function checkTouchShot(x, y) {
     touchY < element_2.y + element_2.height
   ) {
     // START TARGET ANIMATION DOWN
-    target.classList.remove("active");
-    target.classList.add("hide");
-    target.addEventListener("animationend", () => {
-      target.classList.remove("hide");
-    });
+
+    if (target.id === "target-4") {
+      const localTarget = target;
+      localTarget.classList.remove("activeAlt");
+      localTarget.classList.add("hideAlt");
+      localTarget.addEventListener("animationend", removeHideAlt);
+
+      function removeHideAlt() {
+        localTarget.removeEventListener("animationend", removeHideAlt);
+        console.log("hideAlt");
+        console.log("from: ", localTarget);
+        localTarget.classList.remove("hideAlt");
+      }
+    } else {
+      target.classList.remove("active");
+      target.classList.add("hide");
+    }
     pointCounter++;
     document.querySelector(
       "#pointSystem"
@@ -154,18 +168,21 @@ function checkShot() {
     // START TARGET ANIMATION DOWN
 
     if (target.id === "target-4") {
-      target.classList.remove("activeAlt");
-      target.classList.add("hideAlt");
+      const localTarget = target;
+      localTarget.classList.remove("activeAlt");
+      localTarget.classList.add("hideAlt");
+      localTarget.addEventListener("animationend", removeHideAlt);
+
+      function removeHideAlt() {
+        localTarget.removeEventListener("animationend", removeHideAlt);
+        console.log("hideAlt");
+        console.log("from: ", localTarget);
+        localTarget.classList.remove("hideAlt");
+      }
     } else {
       target.classList.remove("active");
       target.classList.add("hide");
     }
-    target.addEventListener("animationend", () => {
-      target.classList.remove("hideAlt");
-    });
-    target.addEventListener("animationend", () => {
-      target.classList.remove("hide");
-    });
     pointCounter++;
     document.querySelector(
       "#pointSystem"

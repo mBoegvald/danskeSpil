@@ -194,6 +194,30 @@ body {
     transform: perspective(1000px) rotateX(90deg) rotateY(0deg);
   }
 }
+.target.activeAlt {
+  animation: from-left 0.15s forwards ease-in;
+  transform-origin: center left;
+}
+@keyframes from-left {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+.target.hideAlt {
+  animation: to-left 0.15s forwards ease-in;
+  transform-origin: center left;
+}
+@keyframes to-left {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  }
+}
 
 .crosshair_absolute {
   position: absolute;
