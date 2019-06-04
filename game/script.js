@@ -42,7 +42,7 @@ function touchShot(event) {
   // get touch x & y coordinates
   let x = event.touches[0].clientX;
   let y = event.touches[0].clientY;
-  checkTouchShot(x, y);
+  checkShot(x, y);
 
   // set center of crosshair
   x -= game.offsetLeft + 16;
@@ -53,59 +53,12 @@ function touchShot(event) {
   crosshair_touch.style.transform = `translate(${x}px,${y}px)`;
 }
 
-function checkTouchShot(x, y) {
-  // check if touch hits target (godt og vel kopi af checkShot-function  DRY?)
-  console.log("checkTouchShot");
-  let touchX = x;
-  let touchY = y;
-
-  hitSound();
-
-  // get positions of target with boundingClientRect
-  let element_2 = target.getBoundingClientRect();
-
-  // check for overlap of boxes
-  if (
-    touchX > element_2.x &&
-    touchY > element_2.y &&
-    touchX < element_2.x + element_2.width &&
-    touchY < element_2.y + element_2.height
-  ) {
-    // START TARGET ANIMATION DOWN
-
-    if (target.id === "target-4") {
-      const localTarget = target;
-      localTarget.classList.remove("activeAlt");
-      localTarget.classList.add("hideAlt");
-      localTarget.addEventListener("animationend", removeHideAlt);
-
-      function removeHideAlt() {
-        localTarget.removeEventListener("animationend", removeHideAlt);
-        console.log("hideAlt");
-        console.log("from: ", localTarget);
-        localTarget.classList.remove("hideAlt");
-      }
-    } else {
-      target.classList.remove("active");
-      target.classList.add("hide");
-    }
-    pointCounter++;
-    document.querySelector(
-      "#pointSystem"
-    ).textContent = `Mål ramt: ${pointCounter}`;
-    newTarget();
-  } else {
-    console.log("You missed");
-  }
-}
-
 function mouseMove(event) {
   // get mouse position
   let x = event.x;
   let y = event.y;
   x -= game.offsetLeft;
   y -= game.offsetTop;
-
   setMouseCenter(x, y);
 }
 
@@ -149,21 +102,26 @@ function newTarget() {
   setTimeout(flipSound, 100);
 }
 
-function checkShot() {
+function checkShot(x, y) {
   console.log("checkShot");
 
   // get positions of elements with boundingClientRect
   const element_1 = crosshair.getBoundingClientRect();
   let element_2 = target.getBoundingClientRect();
 
+  //check touch coordinats
+  let touchX = x;
+  let touchY = y;
+
   hitSound();
 
   // check for overlap of boxes
   if (
-    element_1.x > element_2.x &&
-    element_1.y > element_2.y &&
-    element_1.x < element_2.x + element_2.width &&
-    element_1.y < element_2.y + element_2.height
+    element_1.x > element_2.x ||
+    (touchX > element_2.x && element_1.y > element_2.y) ||
+    (touchY > element_2.y && element_1.x < element_2.x) ||
+    (touchX < element_2.x + element_2.width && element_1.y < element_2.y) ||
+    touchY < element_2.y + element_2.height
   ) {
     // START TARGET ANIMATION DOWN
 
@@ -229,11 +187,11 @@ document.onkeydown = function(evt) {
   }
 };
 
-window.addEventListener("DOMContentLoaded", requestFullscreenOpen);
-function requestFullscreenOpen() {
-  let elem = document.documentElement;
-  console.log("requestFullscreen");
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  }
-}
+// window.addEventListener("DOMContentLoaded", requestFullscreenOpen);
+// function requestFullscreenOpen() {
+//   let elem = document.documentElement;
+//   console.log("requestFullscreen");
+//   if (elem.requestFullscreen) {
+//     elem.requestFullscreen();
+//   }
+// }
