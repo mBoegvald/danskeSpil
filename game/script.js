@@ -126,11 +126,14 @@ function checkShot(x, y) {
 
   // check for overlap of boxes
   if (
-    element_1.x > element_2.x ||
-    (touchX > element_2.x && element_1.y > element_2.y) ||
-    (touchY > element_2.y && element_1.x < element_2.x) ||
-    (touchX < element_2.x + element_2.width && element_1.y < element_2.y) ||
-    touchY < element_2.y + element_2.height
+    (element_1.x > element_2.x &&
+      element_1.y > element_2.y &&
+      element_1.x < element_2.x + element_2.width &&
+      element_1.y < element_2.y + element_2.height) ||
+    (touchX > element_2.x &&
+      touchY > element_2.y &&
+      touchX < element_2.x + element_2.width &&
+      touchY < element_2.y + element_2.height)
   ) {
     // START TARGET ANIMATION DOWN
 
