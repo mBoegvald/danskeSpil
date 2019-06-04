@@ -5,6 +5,7 @@ const game = document.querySelector("#game");
 const stage = document.querySelector("#stage");
 const crosshair = document.querySelector("#crosshair_rect");
 const crosshair_touch = document.querySelector("#crosshair");
+const gun = document.querySelector("#gun");
 let target;
 let latestTarget = null;
 let pointCounter = 0;
@@ -113,6 +114,12 @@ function checkShot(x, y) {
   let touchX = x;
   let touchY = y;
 
+  gun.classList.add("gun-animation");
+  gun.addEventListener("animationend", () => {
+    gun.classList.remove("gun-animation");
+    gun.removeEventListener("animationend");
+  });
+
   hitSound();
 
   // check for overlap of boxes
@@ -133,13 +140,18 @@ function checkShot(x, y) {
 
       function removeHideAlt() {
         localTarget.removeEventListener("animationend", removeHideAlt);
-        console.log("hideAlt");
-        console.log("from: ", localTarget);
         localTarget.classList.remove("hideAlt");
       }
     } else {
-      target.classList.remove("active");
-      target.classList.add("hide");
+      const localTarget = target;
+      localTarget.classList.remove("active");
+      localTarget.classList.add("hide");
+      localTarget.addEventListener("animationend", removeHide);
+
+      function removeHide() {
+        localTarget.removeEventListener("animationend", removeHide);
+        localTarget.classList.remove("hide");
+      }
     }
     pointCounter++;
     document.querySelector(
@@ -156,7 +168,7 @@ function hitSound() {
   let hitShot = document.createElement("audio");
   hitShot.src = "sounds/deagle-shot.mp3";
   hitShot.play();
-  hitShot.volume = 0.1;
+  hitShot.volume = 0.03;
 }
 
 function flipSound() {
