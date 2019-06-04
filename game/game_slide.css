@@ -1,5 +1,5 @@
 #module {
-  background: url(hero.jpg) no-repeat center center fixed;
+  background: url(../pics/hero.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -10,6 +10,11 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  z-index: 9999999999999;
+}
+
+.hide_module {
+  display: none;
 }
 
 .module_logo {

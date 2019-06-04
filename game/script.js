@@ -247,3 +247,14 @@ document.onkeydown = function(evt) {
     alert("Escape");
   }
 };
+
+// GAME SLIDES
+document.querySelector(".fortsaet").addEventListener("click", nextSlideModule);
+function nextSlideModule() {
+  document.querySelector(".slide_2").classList.add("module_active");
+}
+
+document.querySelector("#start_game").addEventListener("click", startGame);
+function startGame() {
+  document.querySelector("#module").classList.add("hide_module");
+}
