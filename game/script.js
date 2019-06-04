@@ -9,7 +9,7 @@ const gun = document.querySelector("#gun");
 let target;
 let latestTarget = null;
 let pointCounter = 0;
-let seconds = document.getElementById("countdown").textContent;
+let seconds = document.querySelector("#countdown span").textContent;
 
 function init() {
   setTimeout(newTarget, 1000);
@@ -24,7 +24,7 @@ function init() {
 function mouseInput() {
   // mouse is moved - set mouse event listners
   game.addEventListener("mousemove", mouseMove, false);
-  game.addEventListener("click", checkShot);
+  game.addEventListener("mousedown", checkShot);
 }
 
 function touchInput() {
@@ -158,10 +158,12 @@ function checkShot() {
   let element_2 = target.getBoundingClientRect();
 
   gun.classList.add("gun-animation");
-  gun.addEventListener("animationend", () => {
+  gun.addEventListener("animationend", removeGunClass);
+
+  function removeGunClass() {
     gun.classList.remove("gun-animation");
-    gun.removeEventListener("animationend");
-  });
+    gun.removeEventListener("animationend", removeGunClass);
+  }
 
   hitSound();
 
@@ -196,9 +198,7 @@ function checkShot() {
       }
     }
     pointCounter++;
-    document.querySelector(
-      "#pointSystem"
-    ).textContent = `Mål ramt: ${pointCounter}`;
+    document.querySelector("#pointSystem span").textContent = pointCounter;
     newTarget();
   } else {
     console.log("You missed");
@@ -223,7 +223,7 @@ function flipSound() {
 function countdown() {
   let countdown = setInterval(function() {
     seconds--;
-    document.getElementById("countdown").textContent = seconds;
+    document.querySelector("#countdown span").textContent = seconds;
     if (seconds <= 0) clearInterval(countdown);
   }, 1000);
 }

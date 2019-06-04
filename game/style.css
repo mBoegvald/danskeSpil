@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Shentox";
+  src: url("../fonts/Shentox-Regular7.eot");
+  src: url("../fonts/Shentox-Regular7.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Shentox-Regular7.woff2") format("woff2"),
+    url("../fonts/Shentox-Regular7.woff") format("woff"),
+    url("../fonts/Shentox-Regular7.ttf") format("truetype"),
+    url("../fonts/Shentox-Regular7.svg#fonts/Shentox-Regular7") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
 img,
 svg {
   width: 100%;
@@ -106,22 +118,21 @@ body {
   pointer-events: none;
 }
 
-#pointSystem {
+#counterContainer {
   position: absolute;
   top: 5%;
-  left: 2%;
-  z-index: 999;
-  font-size: 2vw;
-  pointer-events: none;
-}
-#countdown {
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 10%;
   left: 50%;
-  z-index: 999;
-  font-size: 3vw;
-  pointer-events: none;
+  font-size: 1.5vw;
+  z-index: 500;
+  transform: translateX(-50%);
+  line-height: 0.3;
+  font-family: "Shentox";
+  font-style: italic;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+#counterContainer span {
+  font-size: 2.5vw;
 }
 
 .target {
