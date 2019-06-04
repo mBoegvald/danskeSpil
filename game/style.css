@@ -32,6 +32,57 @@ body {
   overflow: hidden;
 }
 
+#startScreen {
+  z-index: 1000000;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#startButton {
+  background-color: #dc5f11;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  line-height: 70px;
+  width: 10vw;
+  height: 10vh;
+  vertical-align: middle;
+  outline: 0;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  font-family: "Shentox";
+  font-style: italic;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 2.5vw;
+  cursor: pointer;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+#startButton:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+#startTimer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  display: none;
+  font-family: "Shentox";
+  font-style: italic;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 20vw;
+  color: white;
+  pointer-events: none;
+}
+
 #game {
   width: 100vw;
   height: 56.25vw;

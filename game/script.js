@@ -12,6 +12,37 @@ let pointCounter = 0;
 let seconds = document.querySelector("#countdown span").textContent;
 
 function init() {
+  document.querySelector("#startButton").addEventListener("click", () => {
+    let elem = document.documentElement;
+    console.log("requestFullscreen");
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    }
+
+    document.querySelector("#startButton").style.display = "none";
+    setTimeout(() => {
+      console.log("counter");
+      let startSeconds = document.querySelector("#startTimer").textContent;
+      document.querySelector("#startTimer").style.display = "block";
+
+      let startCount = setInterval(function() {
+        startSeconds--;
+        document.querySelector("#startTimer").textContent = startSeconds;
+        if (startSeconds <= 0) clearInterval(startCount);
+        if (startSeconds === 0) {
+          setTimeout(() => {
+            document.querySelector("#startScreen").style.display = "none";
+            start();
+          }, 1000);
+        }
+      }, 1000);
+    }, 1000);
+  });
+}
+
+function start() {
+  console.log("start game");
+
   setTimeout(newTarget, 1000);
   setTimeout(countdown, 1000);
   // check for mouse
@@ -161,8 +192,6 @@ function checkShot(x, y) {
     pointCounter++;
     document.querySelector("#pointSystem span").textContent = pointCounter;
     newTarget();
-  } else {
-    console.log("You missed");
   }
 }
 
@@ -185,8 +214,25 @@ function countdown() {
   let countdown = setInterval(function() {
     seconds--;
     document.querySelector("#countdown span").textContent = seconds;
-    if (seconds <= 0) clearInterval(countdown);
+    if (seconds <= 0) {
+      clearInterval(countdown);
+      setTimeout(() => {
+        game.removeEventListener("mousemove", mouseInput, false);
+        // check for touch device
+        game.removeEventListener("touchstart", touchInput);
+        game.removeEventListener("touchstart", touchShot, false);
+        game.removeEventListener("mousemove", mouseMove, false);
+        game.removeEventListener("mousedown", checkShot);
+        game.style.pointerEvents = "all";
+        console.log("123");
+        setTimeout(endScreen, 3);
+      }, 1000);
+    }
   }, 1000);
+}
+
+function endScreen() {
+  console.log("endscreen");
 }
 
 document.onkeydown = function(evt) {
@@ -201,12 +247,3 @@ document.onkeydown = function(evt) {
     alert("Escape");
   }
 };
-
-// window.addEventListener("DOMContentLoaded", requestFullscreenOpen);
-// function requestFullscreenOpen() {
-//   let elem = document.documentElement;
-//   console.log("requestFullscreen");
-//   if (elem.requestFullscreen) {
-//     elem.requestFullscreen();
-//   }
-// }
