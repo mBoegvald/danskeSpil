@@ -40,6 +40,21 @@ function init() {
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
     }
+
+    document
+      .querySelector("#close_black")
+      .addEventListener("click", endFullScreen);
+    document
+      .querySelector("#close_white")
+      .addEventListener("click", endFullScreen);
+
+    function endFullScreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+      document.querySelector("#close_black").classList.add("hidden");
+      document.querySelector("#close_white").classList.add("hidden");
+    }
     startCountdown();
   }
 }
@@ -77,7 +92,6 @@ function mouseInput() {
 }
 
 function touchInput() {
-  alert("hej");
   game.removeEventListener("touchstart", touchInput);
   game.addEventListener("touchstart", touchShot, false);
 

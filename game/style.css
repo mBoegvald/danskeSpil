@@ -33,7 +33,7 @@ body {
 }
 
 #startScreen {
-  z-index: 1000000;
+  z-index: 1000;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -305,7 +305,38 @@ body {
   pointer-events: none;
 }
 
+.exit {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 9999;
+  background-size: cover;
+}
+
+#close_black {
+  background-image: url(close_black.svg);
+  background-size: cover;
+  display: none;
+}
+
+#close_white {
+  background-image: url(close_white.svg);
+  background-size: cover;
+}
+
 @media only screen and (max-width: 1080px) and (orientation: landscape) {
+  #close_black {
+    background-image: url(close_black.svg);
+    display: block;
+  }
+
+  #close_white {
+    background-image: url(close_white.svg);
+    display: none;
+  }
+
   #foreground {
     background-image: url(foreground_mobile.png);
   }
@@ -328,6 +359,13 @@ body {
 }
 
 @media only screen and (min-width: 1080px) {
+  #close_black {
+    display: none;
+  }
+  #close_white {
+    display: none;
+  }
+
   #foreground {
     background-image: url(foreground_medium.png);
   }
