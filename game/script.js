@@ -274,3 +274,47 @@ function lastSlide() {
   document.querySelector(".slide_3").classList.remove("module_active");
   document.querySelector(".slide_4").classList.add("module_active");
 }
+
+document.querySelector("#deltag_bt").addEventListener("click", checkEmail);
+
+function checkEmail() {
+  const user = {
+    username: form.elements.name.value,
+    email: form.elements.email.value
+  };
+  fetch(
+    "https://danskespil-3a04.restdb.io/rest/signups?q={%22email%22:%22" +
+      user.email +
+      "%22}",
+    {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "x-apikey": "5ce671e7780a473c8df5cb3b	",
+        "cache-control": "no-cache"
+      }
+    }
+  )
+    .then(e => e.json())
+    .then(e => {
+      if (e.length < 1) {
+        console.log("email not in use");
+        postSignUpInfo(user);
+      } else {
+        console.log("email is in use");
+      }
+    });
+}
+function postSignUpInfo(newUser) {
+  fetch("https://danskespil-3a04.restdb.io/rest/signups", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5ce671e7780a473c8df5cb3b",
+      "cache-control": "no-cache"
+    },
+    body: JSON.stringify(newUser)
+  })
+    .then(e => e.json())
+    .then(e => {});
+}
