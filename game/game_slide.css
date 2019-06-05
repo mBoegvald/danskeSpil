@@ -237,6 +237,17 @@ input[type="button"]:hover {
   pointer-events: all;
 }
 
+#del {
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: auto;
+}
+
+.slide_4 a {
+  color: var(--lightOrange);
+}
+
 @keyframes opacity-up {
   0% {
     opacity: 0;

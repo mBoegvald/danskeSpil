@@ -250,9 +250,8 @@ function countdown() {
         document.querySelector(
           ".points_placeholder_2"
         ).textContent = pointCounter;
-        document.querySelector(
-          ".points_placeholder_3"
-        ).textContent = pointCounter;
+        document.querySelector(".points_placeholder_3").textContent =
+          pointCounter * 2;
         console.log("123");
         setTimeout(endScreen, 1000);
       }, 1000);
