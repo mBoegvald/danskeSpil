@@ -268,18 +268,3 @@ function lastSlide() {
   document.querySelector(".slide_3").classList.remove("module_active");
   document.querySelector(".slide_4").classList.add("module_active");
 }
-
-document.onkeydown = function(evt) {
-  evt = evt || window.event;
-  var isEscape = false;
-  if ("key" in evt) {
-    isEscape = evt.key === "Escape" || evt.key === "Esc";
-  } else {
-    isEscape = evt.keyCode === 27;
-  }
-  if (isEscape) {
-    alert("Escape");
-  }
-};
-
-// GAME SLIDES
