@@ -248,7 +248,7 @@ function countdown() {
           ".points_placeholder_2"
         ).textContent = pointCounter;
         console.log("123");
-        setTimeout(endScreen, 3000);
+        setTimeout(endScreen, 1000);
       }, 1000);
     }
   }, 1000);
@@ -259,6 +259,14 @@ function endScreen() {
   // document.querySelector(".slide_2").classList.remove("module_active");
   document.querySelector("#module").classList.add("one-opacity");
   document.querySelector("#module").classList.remove("zero-opacity");
+
+  document.querySelector("#deltag_bt").addEventListener("click", lastSlide);
+}
+
+function lastSlide() {
+  console.log("Last slide");
+  document.querySelector(".slide_3").classList.remove("module_active");
+  document.querySelector(".slide_4").classList.add("module_active");
 }
 
 document.onkeydown = function(evt) {
