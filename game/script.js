@@ -231,7 +231,7 @@ function countdown() {
         game.removeEventListener("mousedown", checkShot);
         game.style.pointerEvents = "all";
         console.log("123");
-        setTimeout(endScreen, 3);
+        setTimeout(endScreen, 3000);
       }, 1000);
     }
   }, 1000);
@@ -239,6 +239,9 @@ function countdown() {
 
 function endScreen() {
   console.log("endscreen");
+  document.querySelector(".slide_2").classList.remove("module_active");
+  document.querySelector(".slide_3").classList.add("module_active");
+  document.querySelector("#module").classList.remove("hide_module");
 }
 
 document.onkeydown = function(evt) {
