@@ -13,6 +13,11 @@
   z-index: 9999999999999;
 }
 
+#startScreen,
+#startTimer {
+  cursor: none;
+}
+
 .hide_module {
   display: none;
 }
