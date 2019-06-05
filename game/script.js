@@ -68,7 +68,6 @@ function start() {
   game.addEventListener("mousemove", mouseInput, false);
   // check for touch device
   game.addEventListener("touchstart", touchInput);
-  game.addEventListener("touchstart", touchShot, false);
 }
 
 function mouseInput() {
@@ -78,6 +77,10 @@ function mouseInput() {
 }
 
 function touchInput() {
+  alert("hej");
+  game.removeEventListener("touchstart", touchInput);
+  game.addEventListener("touchstart", touchShot, false);
+
   // the user is touching the screen for interaction - remove scene-displacement
   game.removeEventListener("mousemove", mouseInput, false);
 
