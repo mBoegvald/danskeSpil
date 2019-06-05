@@ -136,7 +136,8 @@ input[type="checkbox"]:checked {
   margin: 0 0 30px 0;
 }
 
-.points_placeholder {
+.points_placeholder_1,
+.points_placeholder_2 {
   font-family: "Shentox";
 }
 
@@ -223,4 +224,30 @@ input[type="button"] {
 input[type="button"]:hover {
   transform: scale(1.1);
   transition: 0.5s;
+}
+
+.one-opacity {
+  animation: opacity-up 1s;
+}
+
+@keyframes opacity-up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.zero-opacity {
+  animation: opacity-down 1s;
+}
+
+@keyframes opacity-down {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
