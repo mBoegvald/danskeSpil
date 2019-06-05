@@ -162,6 +162,8 @@ body {
   position: absolute;
   bottom: 0;
   right: 15vw;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hidden {
@@ -336,6 +338,10 @@ body {
 
   #background {
     background-image: url(background_medium.jpg);
+  }
+
+  #gun {
+    opacity: 1;
   }
 }
 
