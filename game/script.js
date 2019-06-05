@@ -12,37 +12,44 @@ let pointCounter = 0;
 let seconds = document.querySelector("#countdown span").textContent;
 
 function init() {
-  document.querySelector("#startButton").addEventListener("click", () => {
-    let elem = document.documentElement;
-    console.log("requestFullscreen");
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    }
+  document
+    .querySelector(".fortsaet")
+    .addEventListener("click", nextSlideModule);
+  function nextSlideModule() {
+    document.querySelector(".slide_2").classList.add("module_active");
+  }
 
-    document.querySelector("#startButton").style.display = "none";
-    setTimeout(() => {
-      console.log("counter");
-      let startSeconds = document.querySelector("#startTimer").textContent;
-      document.querySelector("#startTimer").style.display = "block";
+  document.querySelector("#start_game").addEventListener("click", startGame);
+  function startGame() {
+    document.querySelector("#module").classList.add("hide_module");
+    document.querySelector("#startTimer").style.display = "block";
+    startCountdown();
+  }
 
-      let startCount = setInterval(function() {
-        startSeconds--;
-        document.querySelector("#startTimer").textContent = startSeconds;
-        if (startSeconds <= 0) clearInterval(startCount);
-        if (startSeconds === 0) {
-          setTimeout(() => {
-            document.querySelector("#startScreen").style.display = "none";
-            start();
-          }, 1000);
-        }
+  // let elem = document.documentElement;
+  // console.log("requestFullscreen");
+  // if (elem.requestFullscreen) {
+  //   elem.requestFullscreen();
+}
+function startCountdown() {
+  console.log("counter");
+  let startSeconds = document.querySelector("#startTimer").textContent;
+
+  let startCount = setInterval(function() {
+    startSeconds--;
+    document.querySelector("#startTimer").textContent = startSeconds;
+    if (startSeconds <= 0) clearInterval(startCount);
+    if (startSeconds === 0) {
+      setTimeout(() => {
+        console.log("setTimeout start");
+        document.querySelector("#startScreen").style.display = "none";
+        start();
       }, 1000);
-    }, 1000);
-  });
+    }
+  }, 1000);
 }
 
 function start() {
-  console.log("start game");
-
   setTimeout(newTarget, 1000);
   setTimeout(countdown, 1000);
   // check for mouse
@@ -128,8 +135,6 @@ function newTarget() {
   } else {
     target.classList.add("active");
   }
-
-  // target = document.querySelector(".target.active");
 
   setTimeout(flipSound, 100);
 }
@@ -249,12 +254,3 @@ document.onkeydown = function(evt) {
 };
 
 // GAME SLIDES
-document.querySelector(".fortsaet").addEventListener("click", nextSlideModule);
-function nextSlideModule() {
-  document.querySelector(".slide_2").classList.add("module_active");
-}
-
-document.querySelector("#start_game").addEventListener("click", startGame);
-function startGame() {
-  document.querySelector("#module").classList.add("hide_module");
-}
