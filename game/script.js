@@ -23,13 +23,14 @@ function init() {
   function startGame() {
     document.querySelector("#module").classList.add("hide_module");
     document.querySelector("#startTimer").style.display = "block";
+
+    let elem = document.documentElement;
+    console.log("requestFullscreen");
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    }
     startCountdown();
   }
-
-  // let elem = document.documentElement;
-  // console.log("requestFullscreen");
-  // if (elem.requestFullscreen) {
-  //   elem.requestFullscreen();
 }
 function startCountdown() {
   console.log("counter");
