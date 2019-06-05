@@ -22,11 +22,17 @@ function init() {
   document.querySelector("#start_game").addEventListener("click", startGame);
   function startGame() {
     document.querySelector("#module").classList.add("zero-opacity");
-    document.querySelector("#module").addEventListener("animationend", () => {
-      document.querySelector("#module").classList.add("hide_module");
-      document.querySelector("#module").classList.remove("zero-opacity");
+    document
+      .querySelector("#module")
+      .addEventListener("animationend", removeEvent);
+    function removeEvent() {
+      document
+        .querySelector("#module")
+        .removeEventListener("animationend", removeEvent);
       document.querySelector(".slide_2").classList.remove("module_active");
-    });
+      document.querySelector(".slide_3").classList.add("module_active");
+    }
+
     document.querySelector("#startTimer").style.display = "block";
 
     let elem = document.documentElement;
@@ -251,10 +257,8 @@ function countdown() {
 function endScreen() {
   console.log("endscreen");
   // document.querySelector(".slide_2").classList.remove("module_active");
-
-  document.querySelector(".slide_3").classList.add("module_active");
-  document.querySelector("#module").classList.add(".one-opacity");
-  document.querySelector("#module").classList.remove("hide_module");
+  document.querySelector("#module").classList.add("one-opacity");
+  document.querySelector("#module").classList.remove("zero-opacity");
 }
 
 document.onkeydown = function(evt) {

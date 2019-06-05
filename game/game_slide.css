@@ -227,7 +227,8 @@ input[type="button"]:hover {
 }
 
 .one-opacity {
-  animation: opacity-up 1s;
+  animation: opacity-up 1s forwards;
+  pointer-events: all;
 }
 
 @keyframes opacity-up {
@@ -240,7 +241,8 @@ input[type="button"]:hover {
 }
 
 .zero-opacity {
-  animation: opacity-down 1s;
+  animation: opacity-down 1s forwards;
+  pointer-events: none;
 }
 
 @keyframes opacity-down {
