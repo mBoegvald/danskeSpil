@@ -483,12 +483,44 @@ button:hover {
   }
 
   .active-slide {
-    transform: scale(1.7);
+    transform: scale(2.3);
   }
 
   #arrow_down {
     width: 60px;
     height: 30px;
     bottom: 20px;
+  }
+
+  #second .wrapper h1 {
+    font-size: 1.7em;
+    line-height: 1.2em;
+    margin-top: 40px;
+  }
+
+  .slide_title h2 {
+    font-size: 0.6em;
+    line-height: 0.9em;
+  }
+
+  .slide_content img {
+    /* width: 100%;
+    margin: 0;
+    padding: 0; */
+    display: none;
+  }
+
+  .nth-slide {
+    transform: scale(1.5);
+  }
+
+  .gradient {
+    width: 25vw;
+    height: 300%;
+    bottom: -90px;
+  }
+
+  #second .wrapper button {
+    margin: 120px 0;
   }
 }
