@@ -402,6 +402,10 @@ body {
     display: none;
   }
 
+  .gametip {
+    display: none;
+  }
+
   #foreground {
     background-image: url(foreground_mobile.png);
   }
@@ -427,7 +431,12 @@ body {
   #close_black {
     display: none;
   }
+
   #close_white {
+    display: none;
+  }
+
+  .gametip {
     display: none;
   }
 
