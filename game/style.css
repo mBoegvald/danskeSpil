@@ -199,41 +199,106 @@ body {
 
 #target-0 {
   width: 8vw;
-  height: 17.27vw;
+  height: 8.7vw;
   left: 31%;
-  top: 43%;
-  z-index: 450;
-}
-#target-2 {
-  width: 8vw;
-  height: 17.27vw;
-  left: 58%;
   top: 43%;
   z-index: 450;
 }
 
 #target-1 {
   width: 4vw;
-  height: 8.67vw;
+  height: 4.6vw;
   left: 28.75%;
   top: 39.5%;
   z-index: 350;
 }
+
+#target-2 {
+  width: 8vw;
+  height: 8vw;
+  left: 58%;
+  top: 43%;
+  z-index: 450;
+}
+
 #target-3 {
-  width: 4vw;
-  height: 8.67vw;
+  width: 4.5vw;
+  height: 4vw;
   left: 35.5%;
-  top: 40.5%;
+  top: 40%;
   z-index: 350;
 }
+
 #target-4 {
-  width: 3vw;
-  height: 6.47vw;
-  left: 60.7%;
-  top: 41%;
+  width: 3.5vw;
+  height: 7.3vw;
+  left: 60.8%;
+  top: 40%;
   z-index: 350;
   transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
   transform-origin: center left;
+}
+
+#target-5 {
+  width: 8vw;
+  height: 9vw;
+  left: 49%;
+  top: 43%;
+  z-index: 450;
+}
+
+#target-6 {
+  width: 4vw;
+  height: 3.5vw;
+  left: 43%;
+  top: 39.5%;
+  z-index: 350;
+}
+
+#target-7 {
+  width: 4vw;
+  height: 3.5vw;
+  left: 45.7%;
+  top: 39.5%;
+  z-index: 350;
+}
+
+#target-8 {
+  width: 8vw;
+  height: 9vw;
+  left: 25%;
+  top: 41%;
+  z-index: 450;
+  transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  transform-origin: center left;
+}
+
+#target-9 {
+  width: 8vw;
+  height: 8.7vw;
+  left: 40%;
+  top: 43%;
+  z-index: 450;
+}
+
+#target-10 {
+  width: 8vw;
+  height: 8.7vw;
+  left: 71%;
+  top: 43%;
+  z-index: 450;
+  transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  transform-origin: center right;
+}
+
+#target-11 {
+  width: 3.8vw;
+  height: 8vw;
+  left: 51.2%;
+  top: 39.5%;
+  z-index: 350;
+  transform: perspective(1000px) rotateX(0deg) rotateY(90deg);
+  transform-origin: center right;
 }
 
 .target.active {

@@ -163,7 +163,12 @@ function newTarget() {
   latestTarget = targetNumber;
 
   target = document.querySelector("#target-" + targetNumber);
-  if (target.id === "target-4") {
+  if (
+    target.id === "target-4" ||
+    target.id === "target-8" ||
+    target.id === "target-10" ||
+    target.id === "target-11"
+  ) {
     target.classList.add("activeAlt");
   } else {
     target.classList.add("active");
@@ -206,7 +211,12 @@ function checkShot(x, y) {
   ) {
     // START TARGET ANIMATION DOWN
 
-    if (target.id === "target-4") {
+    if (
+      target.id === "target-4" ||
+      target.id === "target-8" ||
+      target.id === "target-10" ||
+      target.id === "target-11"
+    ) {
       const localTarget = target;
       localTarget.classList.remove("activeAlt");
       localTarget.classList.add("hideAlt");
