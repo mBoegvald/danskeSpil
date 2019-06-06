@@ -279,7 +279,14 @@ function endScreen() {
   document.querySelector("#module").classList.add("one-opacity");
   document.querySelector("#module").classList.remove("zero-opacity");
 
-  document.querySelector("#deltag_bt").addEventListener("click", lastSlide);
+  document.querySelector("#deltag_bt").addEventListener("click", () => {
+    console.log(form.elements.email.checkValidity());
+    if (form.elements.email.checkValidity() === false) {
+      document.querySelector(".email_input").style.border = "2px solid red";
+    } else {
+      lastSlide();
+    }
+  });
 }
 
 function lastSlide() {
@@ -288,6 +295,7 @@ function lastSlide() {
   document.querySelector(".slide_4").classList.add("module_active");
 }
 
+const form = document.querySelector("form");
 document.querySelector("#deltag_bt").addEventListener("click", checkEmail);
 
 function checkEmail() {
