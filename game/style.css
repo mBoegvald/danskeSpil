@@ -391,6 +391,10 @@ body {
   background-size: cover;
 }
 
+.gametip {
+  margin-top: 20px;
+}
+
 @media only screen and (max-width: 1080px) and (orientation: landscape) {
   #close_black {
     background-image: url(close_black.svg);
