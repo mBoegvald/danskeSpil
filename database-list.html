@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      .dataContainer {
+        width: 1024px;
+      }
+      .signUpContainer {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .signUpContainer button {
+        height: 25px;
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dataContainer"></div>
+
+    <template class="dataTemplate">
+      <div class="signUpContainer">
+        <div>
+          <h2>Username</h2>
+          <p data-username></p>
+        </div>
+        <div>
+          <h2>Email</h2>
+          <p data-email></p>
+        </div>
+        <button>Delete User</button>
+      </div>
+    </template>
+
+    <script>
+      "use strict";
+
+      let dest = document.querySelector(".dataContainer");
+      let arrayOfUsers = [];
+      let alreadyUsed = true;
+      window.addEventListener("DOMContentLoaded", getSignUpInfo);
+
+      function getSignUpInfo() {
+        fetch("https://danskespil-3a04.restdb.io/rest/signups", {
+          method: "get",
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": "5ce671e7780a473c8df5cb3b	",
+            "cache-control": "no-cache"
+          }
+        })
+          .then(e => e.json())
+          .then(e => {
+            arrayOfUsers = e;
+            console.log(arrayOfUsers);
+            showUsers(e);
+          });
+      }
+
+      function deleteUser(id) {
+        fetch("https://danskespil-3a04.restdb.io/rest/signups/" + id, {
+          method: "delete",
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": "5ce671e7780a473c8df5cb3b",
+            "cache-control": "no-cache"
+          }
+        })
+          .then(e => e.json())
+          .then(e => {});
+      }
+
+      function showUsers(userInfo) {
+        let myTemplate = document.querySelector(".dataTemplate");
+        dest.textContent = "";
+
+        userInfo.forEach(Users => {
+          let clone = myTemplate.cloneNode(true).content;
+
+          clone.querySelector("[data-username]").textContent = Users.username;
+          clone.querySelector("[data-email]").textContent = Users.email;
+
+          clone.querySelector("button").addEventListener("click", e => {
+            e.target.parentElement.remove();
+            deleteUser(Users._id);
+          });
+
+          dest.appendChild(clone);
+        });
+      }
+    </script>
+  </body>
+</html>
