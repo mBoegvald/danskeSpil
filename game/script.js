@@ -6,6 +6,7 @@ const stage = document.querySelector("#stage");
 const crosshair = document.querySelector("#crosshair_rect");
 const crosshair_touch = document.querySelector("#crosshair");
 const gun = document.querySelector("#gun");
+const form = document.querySelector("form");
 let target;
 let latestTarget = null;
 let pointCounter = 0;
@@ -289,16 +290,35 @@ function countdown() {
 
 function endScreen() {
   console.log("endscreen");
-  // document.querySelector(".slide_2").classList.remove("module_active");
   document.querySelector("#module").classList.add("one-opacity");
   document.querySelector("#module").classList.remove("zero-opacity");
 
-  document.querySelector("#deltag_bt").addEventListener("click", () => {
-    console.log(form.elements.email.checkValidity());
-    if (form.elements.email.checkValidity() === false) {
-      document.querySelector(".email_input").style.border = "2px solid red";
+  form.elements.name.addEventListener("focusout", checkNameVal);
+  form.elements.email.addEventListener("focusout", checkEmailVal);
+
+  function checkNameVal() {
+    console.log("11");
+    if (form.elements.name.checkValidity() === false) {
+      document.querySelector("#deltag_name").style.border = "2px solid red";
     } else {
+      document.querySelector("#deltag_name").style.border = "1px solid white";
+    }
+  }
+
+  function checkEmailVal() {
+    if (form.elements.email.checkValidity() === false) {
+      document.querySelector("#deltag_email").style.border = "2px solid red";
+    } else {
+      document.querySelector("#deltag_email").style.border = "1px solid white";
+    }
+  }
+
+  document.querySelector("#deltag_bt").addEventListener("click", () => {
+    if (form.checkValidity() === true) {
       lastSlide();
+    } else {
+      checkNameVal();
+      checkEmailVal();
     }
   });
 }
@@ -309,7 +329,6 @@ function lastSlide() {
   document.querySelector(".slide_4").classList.add("module_active");
 }
 
-const form = document.querySelector("form");
 document.querySelector("#deltag_bt").addEventListener("click", checkEmail);
 
 function checkEmail() {
