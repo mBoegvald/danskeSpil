@@ -154,7 +154,7 @@ function moveStage(mouseXratio, mouseYratio) {
 }
 
 function newTarget() {
-  let targetNumber = Math.floor(Math.random() * 5);
+  let targetNumber = Math.floor(Math.random() * 12);
 
   if (latestTarget === targetNumber) {
     newTarget();
