@@ -119,6 +119,11 @@
   margin-top: 30px;
 }
 
+.compLink {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* input[type="checkbox"] {
   -webkit-appearance: none;
   width: 25px;
