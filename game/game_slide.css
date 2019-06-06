@@ -278,12 +278,28 @@ input[type="button"]:hover {
 
 @media only screen and (max-width: 800px) {
   .slide_1,
+  .slide_2,
   .slide_3,
   .slide_4 {
     grid-template-columns: 100%;
   }
 
-  .slide_2 {
-    grid-template-columns: 20% 80%;
+  .slide_2 .slide_item_1 {
+    display: none;
+  }
+
+  .slide_2 .slide_item_2 {
+    grid-column: 1 / 2;
+  }
+
+  .module_slide p {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+
+  .module_slide h2 {
+    font-size: 2.2rem;
+    line-height: 2.7rem;
+    margin: 20px 0 20px 0;
   }
 }

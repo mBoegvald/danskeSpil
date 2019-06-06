@@ -292,6 +292,7 @@ function endScreen() {
   console.log("endscreen");
   document.querySelector("#module").classList.add("one-opacity");
   document.querySelector("#module").classList.remove("zero-opacity");
+  document.querySelector(".module_logo").classList.add("hidden");
 
   form.elements.name.addEventListener("focusout", checkNameVal);
   form.elements.email.addEventListener("focusout", checkEmailVal);
