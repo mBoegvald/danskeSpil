@@ -12,9 +12,13 @@ let pointCounter = 0;
 let seconds = document.querySelector("#countdown span").textContent;
 
 function init() {
-  document
-    .querySelector(".fortsaet")
-    .addEventListener("click", nextSlideModule);
+  document.querySelector(".fortsaet").addEventListener("click", () => {
+    if (document.querySelector("#checkbox").checked === true) {
+      nextSlideModule();
+    }
+    document.querySelector(".confirm").style.color = "red";
+  });
+
   function nextSlideModule() {
     document.querySelector(".slide_2").classList.add("module_active");
   }
