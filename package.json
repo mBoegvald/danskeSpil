@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/mBoegvald/danskeSpil#readme",
   "dependencies": {
-    "swiper": "^4.5.0"
+    "swiper": "^6.5.1"
   }
 }
